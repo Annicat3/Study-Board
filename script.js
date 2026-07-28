@@ -6,6 +6,19 @@ function openApp(appId) {
     }
 }
 
+function makeDraggable(element) {
+    element.addEventListener('touchmove', function(e) {
+        e.preventDefault();
+        let touch = e.touches[0];
+        element.style.left = (touch.clientX - 50) + 'px';
+        element.style.top = (touch.clientY - 20) + 'px';
+    }, {passive: false});
+}
+document.querySelectorAll('.app-window').forEach(window => {
+    makeDraggable(window);
+})
+
+
 function closeApp(appId) {
     const selectedApp = document.getElementById(appId);
     if (selectedApp) {

@@ -29,13 +29,13 @@
 .app-window {
     display: none;
     position: absolute;
-    background-color: grey;
+    background-color: steelblue;
     color: white;
     padding: 10px;
     border-radius: 12px;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-    width: 250px;
     z-index: 10;
+    touch-action:none;
 }
 
 .window-header {
