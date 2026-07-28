@@ -1,3 +1,69 @@
+.icon-bar {
+    width: 60px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    background-color: steelblue;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+    padding-top: 20px;
+}
+
+.icon-bar button {
+    background: none;
+    border:none;
+    color: white;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 12px;
+}
+
+.workspace {
+    margin-left: 70px;
+    padding: 20px;
+}
+
+.app-window {
+    display: none;
+    position: absolute;
+    background-color: grey;
+    color: white;
+    padding: 10px;
+    border-radius: 12px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    width: 250px;
+    z-index: 10;
+}
+
+.window-header {
+    cursor: move;
+    user-select: none;
+}
+
+.app-window.active {
+    display: block;
+}
+
+.window-header {
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 0px 5px;
+}
+
 
 #time {
     position: fixed;

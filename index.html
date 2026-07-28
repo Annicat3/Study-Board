@@ -5,9 +5,45 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Study Screen</title>
         <link href="style.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
     </head>
 
     <body>
+
+        <div class="icon-bar">
+            <button onclick="openApp('todo')">
+                <i class="material-symbols-outlined">checklist</i>
+            </button>
+            <button onclick="openApp('timer')">
+                <span class="material-symbols-outlined">timer</span>
+            </button>
+            
+        </div>
+
+        <div class="workspace">
+            <div id="todo" class="app-window">
+                <div class="window-header">
+                    <span>Todo List</span>
+                    <button class="close-btn" onclick="closeApp('todo')">x</button>
+                </div>
+                <div class="window-content">
+                    <p> -ToDos- </p>
+                </div>
+            </div>
+            
+            <div id="timer" class="app-window">
+                <div class="window-header">
+                    <span>Timer</span>
+                    <button class="close-btn" onclick="closeApp('timer')">x</button>
+                </div>
+                <div class="window-content">
+                    <p> -Timer- </p>
+                </div>
+            </div>
+
+        </div>
+
 
         <div id="time">00:00</div>
         

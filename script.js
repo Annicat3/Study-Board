@@ -1,4 +1,18 @@
 
+function openApp(appId) {
+    const selectedApp = document.getElementById(appId);
+    if (selectedApp) {
+        selectedApp.classList.add('active');
+    }
+}
+
+function closeApp(appId) {
+    const selectedApp = document.getElementById(appId);
+    if (selectedApp) {
+        selectedApp.classList.remove('active');
+    }
+}
+
 function updateTime() {
     const now = new Date();
     let weekday = String(now.getDay()).padStart(3, "0");
