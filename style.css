@@ -1,5 +1,5 @@
 .icon-bar {
-    width: 60px;
+    width: 75px;
     position: fixed;
     top: 0;
     left: 0;
@@ -29,6 +29,7 @@
 .app-window {
     display: none;
     position: absolute;
+    width: auto;
     background-color: steelblue;
     color: white;
     padding: 10px;
