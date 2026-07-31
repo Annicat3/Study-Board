@@ -28,14 +28,18 @@ function closeApp(appId) {
 
 function updateTime() {
     const now = new Date();
-    let weekday = String(now.getDay()).padStart(3, "0");
+    const weekdays = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
+    let weekday = String(now.getDay()).padStart(1, "0");
+    const weekdayName = weekdays[weekday];
     let month = String(now.getMonth()).padStart(2, "0");
     let day = String(now.getDate()).padStart (2, "0");
     let hours = String(now.getHours()).padStart(2, "0");
     let minutes = String(now.getMinutes()).padStart(2, "0");
 
-    const timeString = `${month}.${day}, ${hours}:${minutes}`;
+    const dateString = `${weekdayName}, ${month}/${day}`;
+    const timeString = `${hours}:${minutes}`;
     document.getElementById("time").textContent = timeString;
+    document.getElementById("date").textContent = dateString;
 }
 
 updateTime();
