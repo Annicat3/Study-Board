@@ -31,7 +31,10 @@
                     <button class="close-btn" onclick="closeApp('todo')">x</button>
                 </div>
                 <div class="window-content">
-                    <p> -ToDos- </p>
+                    <input type="text" id="todoInput" placeholder="New Todo...">
+                    <span onclick="addTodo()" class="addBtn">+</span>
+
+                    <ul id="todoList"></ul>
                 </div>
             </div>
             

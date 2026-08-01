@@ -26,9 +26,27 @@ function closeApp(appId) {
     }
 }
 
+function addTodo() {
+    const todoInput = document.getElementById("todoInput");
+    const text = todoInput.value.trim();
+
+    if (text !== "") {
+        const list = document.getElementById("todoList");
+
+        const li = document.createElement("li");
+        li.innerHTML = `
+        <span>${text}</span>
+        <button onclick = "this.parentElement.remove()">Delete</button>
+        `
+
+        list.appendChild(li);
+        todoInput.value = "";
+    }
+}
+
 function updateTime() {
     const now = new Date();
-    const weekdays = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
+    const weekdays = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
     let weekday = String(now.getDay()).padStart(1, "0");
     const weekdayName = weekdays[weekday];
     let month = String(now.getMonth()).padStart(2, "0");
