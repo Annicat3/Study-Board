@@ -32,16 +32,37 @@ function addTodo() {
 
     if (text !== "") {
         const list = document.getElementById("todoList");
-
         const li = document.createElement("li");
+
         li.innerHTML = `
-        <span>${text}</span>
-        <button onclick = "this.parentElement.remove()">Delete</button>
-        `
+        <span onclick="toggleTodo(this.parentElement)" style="cursor: pointer" >${text}</span>
+        <button id="delete-btn" onclick="this.parentElement.remove(); saveTodos()">x</button>
+        `;
 
         list.appendChild(li);
         todoInput.value = "";
+        saveTodos();
     }
+}
+
+function saveTodos() {
+    const list = document.getElementById('todoList');
+    localStorage.setItem('myTodoList', list.innerHTML);
+}
+
+function loadTodos() {
+    const list = document.getElementById('todoList');
+    const savedData = localStorage.getItem('myTodoList');
+    if (savedData) {
+        list.innerHTML = savedData;
+    }
+}
+
+loadTodos();
+
+function toggleTodo(element) {
+    element.classList.toggle('completed');
+    saveTodos();
 }
 
 function updateTime() {

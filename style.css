@@ -39,16 +39,13 @@
     touch-action:none;
 }
 
-.window-header {
-    cursor: move;
-    user-select: none;
-}
-
 .app-window.active {
     display: block;
 }
 
 .window-header {
+    cursor:move;
+    user-select: none;
     display:flex;
     justify-content: space-between;
     align-items: center;
@@ -63,6 +60,11 @@
     font-weight: bold;
     cursor: pointer;
     padding: 0px 5px;
+}
+
+#todoList li.completed span{
+    text-decoration: line-through;
+    opacity: 0.6;
 }
 
 
