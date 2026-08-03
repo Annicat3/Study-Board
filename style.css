@@ -50,6 +50,7 @@
     justify-content: space-between;
     align-items: center;
     padding: 5px;
+    margin-bottom: 10px;
 }
 
 .close-btn {
@@ -62,6 +63,40 @@
     padding: 0px 5px;
 }
 
+#todoList {
+    list-style:none;
+    padding-left: 0;
+    margin: 0;
+}
+
+#todoList li{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2px;
+}
+
+.todo-left {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.todo-left input[type="checkbox"] {
+    width: 15px;
+    height: 15px;
+    cursor: pointer;
+}
+
+#todoList li button {
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: bold;
+}
+
 #todoList li.completed span{
     text-decoration: line-through;
     opacity: 0.6;
@@ -70,8 +105,8 @@
 
 #datetime {
     position: fixed;
-    bottom: 20px;
-    right: 20px;
+    bottom: 2%;
+    right: 2%;
     background-color: steelblue;
     padding: 10px;
     border-radius: 15px;
@@ -83,5 +118,4 @@
 
 #date, #time {
     color: white;
-    font-size: 1rem;
 }

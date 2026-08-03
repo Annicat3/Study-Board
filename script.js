@@ -35,8 +35,11 @@ function addTodo() {
         const li = document.createElement("li");
 
         li.innerHTML = `
-        <span onclick="toggleTodo(this.parentElement)" style="cursor: pointer" >${text}</span>
-        <button id="delete-btn" onclick="this.parentElement.remove(); saveTodos()">x</button>
+        <div class="todo-left">
+          <input type="checkbox" onchange="toggleTodo(this)" />
+          <span>${text}</span>
+        </div>
+        <button onclick="this.parentElement.remove(); saveTodos()">x</button>
         `;
 
         list.appendChild(li);
@@ -60,9 +63,16 @@ function loadTodos() {
 
 loadTodos();
 
-function toggleTodo(element) {
-    element.classList.toggle('completed');
-    saveTodos();
+function toggleTodo(checkbox) {
+    const li = checkbox.closest('li');
+    if (checkbox.checked) {
+        li.classList.add('completed');
+        checkbox.setAttribute('checked', 'checked');
+    } else {
+        li.classList.remove('completed');
+        checkbox.removeAttribute('checked');
+    }
+    saveTodos(); 
 }
 
 function updateTime() {
