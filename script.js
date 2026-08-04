@@ -75,6 +75,20 @@ function toggleTodo(checkbox) {
     saveTodos(); 
 }
 
+function saveNotes() {
+    const notesText = document.getElementById("notesInput").value;
+    localStorage.setItem("myNotes", notesText);
+}
+
+function loadNotes() {
+    const savedNotes = localStorage.getItem("myNotes");
+    if (savedNotes !== null) {
+        document.getElementById("notesInput").value = savedNotes;
+    }
+}
+
+loadNotes();
+
 function updateTime() {
     const now = new Date();
     const weekdays = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]

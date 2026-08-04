@@ -102,6 +102,22 @@
     opacity: 0.6;
 }
 
+#notes .window-content {
+    display: flex;
+    flex-direction: column;
+    height: calc(100%);
+}
+
+#notesInput {
+    height: 100px;
+    background: white;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    resize: none;
+    line-height: 1.5;
+}
 
 #datetime {
     position: fixed;
