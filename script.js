@@ -89,6 +89,17 @@ function loadNotes() {
 
 loadNotes();
 
+const notesInput = document.getElementById("notesInput");
+notesInput.addEventListener("input", function() {
+    this.style.height = "auto"; 
+    this.style.height = this.scrollHeight + "px";
+    saveNotes();
+});
+
+notesInput.addEventListener("touchmove", function(e) {
+    e.stopPropagation();
+}, {passive: false});
+
 function updateTime() {
     const now = new Date();
     const weekdays = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
