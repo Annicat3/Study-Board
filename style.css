@@ -152,6 +152,13 @@
     gap: 8px;
 }
 
+.timer-controls button {
+    border-radius: 5px;
+    border: none;
+    background: rgba(255, 255, 255, 0.2);
+    cursor: pointer;
+}
+
 
 #datetime {
     position: fixed;
