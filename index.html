@@ -44,7 +44,16 @@
                     <button class="close-btn" onclick="closeApp('timer')">x</button>
                 </div>
                 <div class="window-content">
-                    <p> -Timer- </p>
+                    <div id="timerDisplay">00:00</div>
+                    <div class="timer-input-group">
+                        <input type="number" id="timerInput" placeholder="Min" min="1" max="99">
+                        <span>Minutes</span>
+                    </div>
+                    <div class="timer-controlls">
+                        <button id="startBtn" onclick="startTimer()">Start</button>
+                        <button onclick="pauseTimer()">Pause</button>
+                        <button onclick="resetTimer()">Reset</button>
+                    </div>
                 </div>
             </div>
 
@@ -62,7 +71,7 @@
 
 
         <div id="datetime">
-            <div id="time" style="font-size:30px">00:00</div>
+            <div id="time" ">00:00</div>
             <div id="date">weekday, 00/00</div>
         </div>
         

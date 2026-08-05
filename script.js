@@ -100,6 +100,48 @@ notesInput.addEventListener("touchmove", function(e) {
     e.stopPropagation();
 }, {passive: false});
 
+
+let timerInterval = null;
+let totalSeconds = 0;
+
+function startTimer() {
+    if (timerInterval !== null) return;
+    const input = document.getElementById("timerInput");
+    if (totalSeconds === 0 && input.value > 0) {
+        totalSeconds = parseInt(input.value) * 60;
+    }
+
+    if (totalSeconds > 0){
+        timerInterval = setInterval(updateTimerDisplay, 1000);
+    }
+}
+
+function updateTimerDisplay() {
+    if (totalSeconds <= 0) {
+        clearInterval(timerInterval);
+        timerInterval = null;
+        alert("Time's up!");
+        return;
+    }
+    totalSeconds--;
+    const minutes = Math.floor(totalSeconds / 60);
+    const seconds = totalSeconds % 60;
+    const displayString = String(minutes).padStart(2, '0') + ":" + String(seconds).padStart(2, '0');
+    document.getElementById("timerDisplay").innerText = displayString;
+}
+
+function pauseTimer() {
+    clearInterval(timerInterval);
+    timerInterval = null;
+}
+
+function resetTimer() {
+    pauseTimer();
+    totalSeconds = 0;
+    document.getElememtById("timerDisplay").innerText = "00:00";
+    document.getElementById("timerInput").value = "";
+}
+
 function updateTime() {
     const now = new Date();
     const weekdays = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
