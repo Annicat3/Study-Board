@@ -138,7 +138,7 @@ function pauseTimer() {
 function resetTimer() {
     pauseTimer();
     totalSeconds = 0;
-    document.getElememtById("timerDisplay").innerText = "00:00";
+    document.getElementById("timerDisplay").innerText = "00:00";
     document.getElementById("timerInput").value = "";
 }
 
