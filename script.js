@@ -169,6 +169,19 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
+
+function changeAccentColor(newColor) {
+    document.documentElement.style.setProperty("--accent-color", newColor);
+    localStorage.setItem("customAccentColor", newColor);
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    const savedColor = localStorage.getItem("customAccentColor");
+    if (savedColor) {
+        changeAccentColor(savedColor);
+    }
+});
+
 function updateTime() {
     const now = new Date();
     const weekdays = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]

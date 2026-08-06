@@ -1,10 +1,14 @@
+:root {
+    --accent-color: steelblue;
+}
+
 .icon-bar {
     width: 75px;
     position: fixed;
     top: 0;
     left: 0;
     height: 100vh;
-    background-color: steelblue;
+    background-color: var(--accent-color);
     display: flex;
     flex-direction: column;
     gap: 15px;
@@ -30,7 +34,7 @@
     display: none;
     position: absolute;
     width: auto;
-    background-color: steelblue;
+    background-color: var(--accent-color);
     color: white;
     padding: 10px;
     border-radius: 12px;
@@ -41,6 +45,13 @@
 
 .app-window.active {
     display: block;
+}
+
+.app-window.fullscreen-window {
+    width: 70vw;
+    top: 15% !important;
+    left: 15% !important;
+    bottom: 15% !important;
 }
 
 .window-header {
@@ -114,7 +125,6 @@
     max-height: 150px;
     overflow-y: auto;
     background: white;
-    color: black;
     border: none;
     border-radius: 5px;
     outline: none;
@@ -142,7 +152,6 @@
     width: 20px;
     padding: 4px 8px;
     border-radius: 6px;
-    border: 1px solid deepslategray;
     text-align: center;
 }
 
@@ -172,12 +181,25 @@
     accent-color: dimgrey;
 }
 
+.color-options {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.color-btn {
+    width: 25px;
+    height: 25px;
+    border: 2px solid white;
+    border-radius: 50%;
+}
 
 #datetime {
     position: fixed;
     bottom: 10px;
     right: 10px;
-    background-color: steelblue;
+    background-color: var(--accent-color);
     color: white;
     padding: 10px;
     border-radius: 15px;

@@ -24,6 +24,9 @@
             <button onclick="openApp('ambient-sounds')">
                 <span class="material-icons" style="font-size:35px">headphones</span>
             </button>
+            <button onclick="openApp('settings')">
+                <span class="material-icons" style="font-size: 35px;">settings</span>
+            </button>
             
         </div>
 
@@ -106,6 +109,21 @@
                         <input type="range" id="catpurrVolume" min="0" max="1" step="0.01" value="0" oninput="adjustVolume('catpurr', this.value)">
                     </div>
                     <audio id="catpurr" src="audio/cat-purr.mp3" loop></audio>
+                </div>
+            </div>
+
+            <div id="settings" class="app-window fullscreen-window">
+                <div class="window-header">
+                    <span>Settings</span>
+                    <button class="close-btn" onclick="closeApp('settings')">x</button>
+                </div>
+                <div class="window-content">
+                    <h3>Accent Color</h3>
+                    <div class="color-options">
+                        <button class="color-btn" style="background: cadetblue" onclick="changeAccentColor('cadetblue')"></button>
+
+                        <input type="color" id="colorPicker" onchange="changeAccentColor(this.value)">
+                    </div>
                 </div>
             </div>
 
