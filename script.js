@@ -142,12 +142,32 @@ function resetTimer() {
     document.getElementById("timerInput").value = "";
 }
 
+function adjustVolume(audioId, sliderValue) {
+    const audio = document.getElementById(audioId);
+    if (!audio) return;
+    
+    const volume = parseFloat(sliderValue);
+    audio.volume = volume;
+
+    if (volume > 0 && audio.paused) {
+        audio.play();
+    }
+    else if (volume === 0 && !audio.paused) {
+        audio.pause();
+    }
+}
+
+
+
 document.addEventListener("DOMContentLoaded", () => {
     const rangeInputs = document.querySelectorAll('input[type="range"]');
     rangeInputs.forEach(input => {
+        input.addEventListener('touchstart', (e) => {
+            e.stopPropagation();
+        });
         input.addEventListener('touchmove', (e) => {
             e.stopPropagation();
-        }, {passive: true});
+        });
     });
 });
 
