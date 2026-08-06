@@ -1,5 +1,6 @@
 :root {
     --accent-color: steelblue;
+    --text-color: white;
 }
 
 .icon-bar {
@@ -9,6 +10,7 @@
     left: 0;
     height: 100vh;
     background-color: var(--accent-color);
+    color: var(--text-color);
     display: flex;
     flex-direction: column;
     gap: 15px;
@@ -19,7 +21,7 @@
 .icon-bar button {
     background: none;
     border:none;
-    color: white;
+    color: var(--text-color);
     cursor: pointer;
     padding: 10px;
     border-radius: 12px;
@@ -35,7 +37,7 @@
     position: absolute;
     width: auto;
     background-color: var(--accent-color);
-    color: white;
+    color: var(--text-color);
     padding: 10px;
     border-radius: 12px;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
@@ -68,7 +70,7 @@
 .close-btn {
     background: none;
     border: none;
-    color: white;
+    color: var(--text-color);
     font-size: 15px;
     font-weight: bold;
     cursor: pointer;
@@ -104,7 +106,7 @@
 #todoList li button {
     background: none;
     border: none;
-    color: white;
+    color: var(--text-color);
     cursor: pointer;
     font-size: 13px;
     font-weight: bold;
@@ -200,7 +202,7 @@
     bottom: 10px;
     right: 10px;
     background-color: var(--accent-color);
-    color: white;
+    color: var(--text-color);
     padding: 10px;
     border-radius: 15px;
     display: flex;
