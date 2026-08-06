@@ -77,16 +77,28 @@
                 </div>
                 <div class="window-content">
                     <div class="sound-option">
-                        <span>Rain</span>
-                        <input type="range" id="rainVolume" min="0" max="1" step="0.01" value="0" onchange="setVolume('rain', this.value)">
+                        <span>Forest</span>
+                        <input type="range" id="forestVolume" min="0" max="1" step="0.01" value="0" oninput="adjustVolume('forest', this.value)">
                     </div>
                     <div class="sound-option">
-                        <span>Forest</span>
-                        <input type="range" id="forestVolume" min="0" max="1" step="0.01" value="0" onchange="setVolume('forest', this.value)">
+                        <span>Rain</span>
+                        <input type="range" id="rainVolume" min="0" max="1" step="0.01" value="0" oninput="adjustVolume('rain', this.value)">
                     </div>
                     <div class="sound-option">
                         <span>Ocean</span>
-                        <input type="range" id="oceanVolume" min="0" max="1" step="0.01" value="0" onchange="setVolume('ocean', this.value)">
+                        <input type="range" id="oceanVolume" min="0" max="1" step="0.01" value="0" oninput="adjustVolume('ocean', this.value)">
+                    </div>
+                    <div class="sound-option">
+                        <span>River</span>
+                        <input type="range" id="riverVolume" min="0" max="1" step="0.01" value="0" oninput="adjustVolume('river', this.value)">
+                    </div>
+                    <div class="sound-option">
+                        <span>Campfire</span>
+                        <input type="range" id="campfireVolume" min="0" max="1" step="0.01" value="0" oninput="adjustVolume('campfire', this.value)">
+                    </div>
+                    <div class="sound-option">
+                        <span>Cat purr</span>
+                        <input type="range" id="catpurrVolume" min="0" max="1" step="0.01" value="0" oninput="adjustVolume('catpurr', this.value)">
                     </div>
                 </div>
             </div>
