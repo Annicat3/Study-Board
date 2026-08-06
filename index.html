@@ -21,6 +21,9 @@
             <button onclick="openApp('notes')">
                 <span class="material-icons" style="font-size:35px">notes</span>
             </button>
+            <button onclick="openApp('ambient-sounds')">
+                <span class="material-icons" style="font-size:35px">headphones</span>
+            </button>
             
         </div>
 
@@ -64,6 +67,27 @@
                 </div>
                 <div class="window-content">
                     <textarea id="notesInput" placeholder="Write your notes here..." oninput="saveNotes()"></textarea>
+                </div>
+            </div>
+
+            <div id="ambient-sounds" class="app-window">
+                <div class="window-header">
+                    <span>Ambient Sounds</span>
+                    <button class="close-btn" onclick="closeApp('ambient-sounds')">x</button>
+                </div>
+                <div class="window-content">
+                    <div class="sound-option">
+                        <span>Rain</span>
+                        <input type="range" id="rainVolume" min="0" max="1" step="0.01" value="0" onchange="setVolume('rain', this.value)">
+                    </div>
+                    <div class="sound-option">
+                        <span>Forest</span>
+                        <input type="range" id="forestVolume" min="0" max="1" step="0.01" value="0" onchange="setVolume('forest', this.value)">
+                    </div>
+                    <div class="sound-option">
+                        <span>Ocean</span>
+                        <input type="range" id="oceanVolume" min="0" max="1" step="0.01" value="0" onchange="setVolume('ocean', this.value)">
+                    </div>
                 </div>
             </div>
 
