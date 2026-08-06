@@ -149,15 +149,13 @@ function adjustVolume(audioId, sliderValue) {
     const volume = parseFloat(sliderValue);
     audio.volume = volume;
 
-    if (volume > 0 && audio.paused) {
-        audio.play();
+    if (volume > 0) {
+        audio.play().catch(() => {});
     }
-    else if (volume === 0 && !audio.paused) {
+    else {
         audio.pause();
     }
 }
-
-
 
 document.addEventListener("DOMContentLoaded", () => {
     const rangeInputs = document.querySelectorAll('input[type="range"]');
