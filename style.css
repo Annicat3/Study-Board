@@ -50,7 +50,7 @@
 }
 
 .app-window.fullscreen-window {
-    width: 70vw;
+    width: 80vw;
     top: 15% !important;
     left: 15% !important;
     bottom: 15% !important;
@@ -126,7 +126,6 @@
     min-height: 40px;
     max-height: 150px;
     overflow-y: auto;
-    background: white;
     border: none;
     border-radius: 5px;
     outline: none;
