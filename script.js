@@ -142,6 +142,15 @@ function resetTimer() {
     document.getElementById("timerInput").value = "";
 }
 
+document.addEventListener("DOMContentLoaded", () => {
+    const rangeInputs = document.querySelectorAll('input[type="range"]');
+    rangeInputs.forEach(input => {
+        input.addEventListener('touchmove', (e) => {
+            e.stopPropagation();
+        }, {passive: true});
+    });
+});
+
 function updateTime() {
     const now = new Date();
     const weekdays = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
