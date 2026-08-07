@@ -2,6 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
+        <meta name="referrer" content="strict-origin-when-cross-origin" />
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Study Board</title>
         <link href="style.css" rel="stylesheet">
@@ -10,6 +11,15 @@
     </head>
 
     <body>
+
+        <div class="video-background">
+            <iframe 
+               id="bgVideo" 
+               frameborder="0" 
+               allow="autoplay; encrypted-media"
+               referrerpolicy="strict-origin-when-cross-origin"
+            ></iframe>
+        </div>
 
         <div class="icon-bar">
             <button onclick="openApp('todo')">
@@ -43,7 +53,7 @@
                     <ul id="todoList"></ul>
                 </div>
             </div>
-            
+        
             <div id="timer" class="app-window">
                 <div class="window-header">
                     <span>Timer</span>
@@ -61,6 +71,7 @@
                         <button onclick="resetTimer()" class="material-icons" style="font-size: 15px;">replay</button>
                     </div>
                 </div>
+                <audio id="alarm" src="audio/funny-alarm.mp3"></audio>
             </div>
 
             <div id="notes" class="app-window">
@@ -128,9 +139,15 @@
                         <button class="color-btn" style="background: #338eda" onclick="changeAccentColor('#338eda')"></button>
                         <button class="color-btn" style="background: #a633d6" onclick="changeAccentColor('#a633d6')"></button>
                         <button class="color-btn" style="background: #8492a6" onclick="changeAccentColor('#8492a6')"></button>
-                        
                         <input type="color" id="colorPicker" onchange="changeAccentColor(this.value)">
                     </div>
+
+                    <h3>Youtube Background</h3>
+                    <div class="yt-settings">
+                        <input type="text" id="ytInput" placeholder="Insert YouTube link...">
+                        <button onclick="applyYtBg()">Apply</button>
+                    </div>
+
                 </div>
             </div>
 
@@ -138,10 +155,10 @@
 
 
         <div id="datetime">
-            <div id="time" ">00:00</div>
+            <div id="time">00:00</div>
             <div id="date">weekday, 00/00</div>
         </div>
         
-        <script src="script.js"> </script>
+        <script src="script.js"></script>
     </body>
 </html>

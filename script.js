@@ -18,13 +18,35 @@ document.querySelectorAll('.app-window').forEach(window => {
     makeDraggable(window);
 })
 
-
 function closeApp(appId) {
     const selectedApp = document.getElementById(appId);
     if (selectedApp) {
         selectedApp.classList.remove('active');
     }
 }
+
+function applyYtBg() {
+    const url = document.getElementById("ytInput").value.trim();
+    const match = url.match(/^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/);
+    const videoId = (match && match[2].length === 11) ? match[2] : null;
+
+    if (videoId) {
+        setVideoBackground(videoId);
+    }
+}
+
+function setVideoBackground(videoId) {
+    const iframe = document.getElementById('bgVideo');
+    if (iframe) {
+        iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1&controls=1&loop=1&playlist=${videoId}&playsinline=1&enablejsapi=1`;
+        localStorage.setItem('customYtVideoId', videoId);
+    }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    const savedVideoId = localStorage.getItem('customYtVideoId');
+    if (savedVideoId) setVideoBackground(savedVideoId);
+})
 
 function addTodo() {
     const todoInput = document.getElementById("todoInput");
@@ -90,15 +112,17 @@ function loadNotes() {
 loadNotes();
 
 const notesInput = document.getElementById("notesInput");
-notesInput.addEventListener("input", function() {
-    this.style.height = "auto"; 
-    this.style.height = this.scrollHeight + "px";
-    saveNotes();
-});
+if (notesInput) {
+    notesInput.addEventListener("input", function() {
+        this.style.height = "auto"; 
+        this.style.height = this.scrollHeight + "px";
+        saveNotes();
+    });
 
-notesInput.addEventListener("touchmove", function(e) {
-    e.stopPropagation();
-}, {passive: false});
+    notesInput.addEventListener("touchmove", function(e) {
+        e.stopPropagation();
+    }, {passive: false});
+}
 
 
 let timerInterval = null;
@@ -119,8 +143,8 @@ function startTimer() {
 function updateTimerDisplay() {
     if (totalSeconds <= 0) {
         clearInterval(timerInterval);
-        timerInterval = null;
-        alert("Time's up!");
+        //document.getElementById('alarm').play().catch(() => {});
+        alert("Time's up!")
         return;
     }
     totalSeconds--;
