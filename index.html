@@ -143,18 +143,33 @@
                         <input type="color" id="colorPicker" onchange="changeAccentColor(this.value)">
                     </div>
 
-                    <h3> <br> Background</h3>
-                    <h4>Background Image</h4>
+                    <hr style="color:var(--text-color)";>
+
+                    <h3>Background</h3>
+                    <h4 style=" margin: 5px;">Background Image</h4>
                     <div class="bg-settings">
                         <input type="file" id="bgFileInput" accept="image/*" onchange="handleLocalImage(event)">
                         <button onclick="removeBg()">Remove</button>
+                        
+                        <div class="bg-presets">
+                            <img src="https://images.unsplash.com/photo-1777366635481-649531d147a4?q=80&w=2000" class="preset-thumb" onclick="setImageBackground(this.src)">
+                            <img src="https://images.unsplash.com/photo-1781642349478-44eb9d615d6a?q=80&w=2000" class="preset-thumb" onclick="setImageBackground(this.src)">
+                            <img src="https://images.unsplash.com/photo-1549124151-844d2a02fe9a?q=80&w=2000" class="preset-thumb" onclick="setImageBackground(this.src)">
+                            <img src="https://images.unsplash.com/photo-1574236170878-f66e35f83207?q=80&w=2000" class="preset-thumb" onclick="setImageBackground(this.src)">
+                            <img src="https://images.unsplash.com/photo-1540542134-b61d688f1441?q=80&w=2000" class="preset-thumb" onclick="setImageBackground(this.src)">
+                            <img src="https://images.unsplash.com/photo-1771944163157-853c3d7325ae?q=80&w=2000" class="preset-thumb" onclick="setImageBackground(this.src)">
+                            <img src="https://images.unsplash.com/photo-1781099999671-08a6de4f36df?q=80&w=2000" class="preset-thumb" onclick="setImageBackground(this.src)">
+                            <img src="https://images.unsplash.com/photo-1534447677768-be436bb09401?q=80&w=2000" class="preset-thumb" onclick="setImageBackground(this.src)">
+                        </div>
+                        
                     </div>
 
-                    <h4>Youtube Background</h4>
+                    <h4 style="margin-top: 20px; margin-bottom: 5px;">Youtube Background</h4>
                     <div class="yt-settings">
                         <input type="text" id="ytInput" placeholder="Insert YouTube link...">
                         <button onclick="applyYtBg()">Apply</button>
                     </div>
+                    <hr style="color: var(--text-color)">
 
                 </div>
             </div>

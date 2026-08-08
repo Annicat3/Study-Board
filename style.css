@@ -61,13 +61,29 @@
     position: fixed;
     top: 0;
     left: 75px;
-    width: calc(100vw - 80px);
+    width: calc(100vw - 75px);
     height: 100vh;
     z-index: -1;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     transition: background-image 0.3s ease;
+}
+
+.bg-presets {
+    margin-top: 12px;
+    display: flex;
+    gap: 10px;
+}
+
+.preset-thumb {
+    width: 60px;
+    height: 40px;
+    object-fit: cover;
+    border-radius: 5px;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: transform 0.2s ease, border-color 0.2s ease;
 }
 
 .video-background {
@@ -87,6 +103,7 @@
 }
 
 .window-header {
+    font-size: 20px;
     font-weight: bold;
     cursor:move;
     user-select: none;
