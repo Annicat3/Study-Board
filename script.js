@@ -6,6 +6,19 @@ function openApp(appId) {
     }
 }
 
+document.querySelectorAll('.app-window').forEach(win => {
+    win.addEventListener('dragstart', (e) => {
+        e.dataTransfer.setData('text/plain', null);
+        win.dataset.startX = e.clientX - win.offsetLeft;
+        win.dataset.startY = e.clientY - win.offsetTop;
+    });
+
+    win.addEventListener('dragend', (e) => {
+        win.style.left = (e.clientX - win.dataset.startX) + 'px';
+        win.style.top = (e.clientY - win.dataset.startY) + 'px';
+    });
+});
+
 function makeDraggable(element) {
     element.addEventListener('touchmove', function(e) {
         e.preventDefault();
@@ -67,6 +80,14 @@ function applyYtBg() {
 
     if (videoId) {
         setVideoBackground(videoId);
+    }
+}
+
+function removeYtBg() {
+    const iframe= document.getElementById('bgVideo');
+    if (iframe) {
+        iframe.src = " ";
+        localStorage.removeItem('customYtVideoId');
     }
 }
 
@@ -272,7 +293,7 @@ function updateTime() {
     const weekdays = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
     let weekday = String(now.getDay()).padStart(1, "0");
     const weekdayName = weekdays[weekday];
-    let month = String(now.getMonth()).padStart(2, "0");
+    let month = String(now.getMonth() +1 ).padStart(2, "0");
     let day = String(now.getDate()).padStart (2, "0");
     let hours = String(now.getHours()).padStart(2, "0");
     let minutes = String(now.getMinutes()).padStart(2, "0");

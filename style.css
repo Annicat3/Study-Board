@@ -189,7 +189,7 @@
 }
 
 .timer-input-group input {
-    width: 20px;
+    width: 30px;
     padding: 4px 8px;
     border-radius: 6px;
     text-align: center;
@@ -198,7 +198,7 @@
 .timer-controls {
     display: flex;
     justify-content: center;
-    gap: 8px;
+    gap: 10px;
 }
 
 .timer-controls button {
@@ -219,6 +219,7 @@
 .sound-option input[type="range"] {
     width: 110px;
     accent-color: dimgrey;
+    cursor: pointer;
 }
 
 #cat-app {
@@ -246,10 +247,13 @@
     height: 25px;
     border: 2px solid white;
     border-radius: 50%;
+    cursor: pointer;
 }
 
-.settings {
+#settings {
     height: auto;
+    max-height: 455px;
+    max-width: 600px;
     position: fixed;
     top: 0;
     left: 0;

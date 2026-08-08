@@ -46,20 +46,20 @@
 
         <div class="workspace">
             <div id="todo" class="app-window">
-                <div class="window-header">
+                <div class="window-header" draggable="true">
                     <span>Todo List</span>
                     <button class="close-btn" onclick="closeApp('todo')">x</button>
                 </div>
                 <div class="window-content">
                     <input type="text" id="todoInput" placeholder="New Todo...">
-                    <span onclick="addTodo()" class="addBtn">+</span>
+                    <span onclick="addTodo()" class="addBtn" style="cursor: pointer;">+</span>
 
                     <ul id="todoList"></ul>
                 </div>
             </div>
         
             <div id="timer" class="app-window">
-                <div class="window-header">
+                <div class="window-header" draggable="true">
                     <span>Timer</span>
                     <button class="close-btn" onclick="closeApp('timer')">x</button>
                 </div>
@@ -79,7 +79,7 @@
             </div>
 
             <div id="notes" class="app-window">
-                <div class="window-header">
+                <div class="window-header" draggable="true">
                     <span>Notes</span>
                     <button class="close-btn"onclick="closeApp('notes')">x</button>
                 </div>
@@ -89,7 +89,7 @@
             </div>
 
             <div id="ambient-sounds" class="app-window">
-                <div class="window-header">
+                <div class="window-header" draggable="true">
                     <span>Ambient Sounds</span>
                     <button class="close-btn" onclick="closeApp('ambient-sounds')">x</button>
                 </div>
@@ -128,8 +128,8 @@
             </div>
 
             <div id="cat-app" class="app-window">
-                <div class="window-header">
-                    <span>Daily Cat & Motivation</span>
+                <div class="window-header" draggable="true">
+                    <span>Daily Cat & Quote</span>
                     <button class="close-btn" onclick="closeApp('cat-app')">x</button>
                 </div>
                 <div class="window-content">
@@ -186,13 +186,14 @@
                     <div class="yt-settings">
                         <input type="text" id="ytInput" placeholder="Insert YouTube link..." style="margin-bottom: 10px;">
                         <button onclick="applyYtBg()">Apply</button>
+                        <button onclick="removeYtBg()">Remove</button>
                     </div>
                     <hr style="color: var(--text-color)">
 
                     <p class="credits">
                         Powered by <b>TheCatAPI</b> & <b>DummyJson</b><br>
-                        Icons by <b>Google Material Symbols</b><br>
-                        Audio by <b>Pixabay</b> & Images by <b>Unsplashed</b></p>
+                        Icons by <b>Google Material Icons</b><br>
+                        Audio by <b>Pixabay</b> & Images by <b>Unsplash</b></p>
                 </div>
             </div>
 
