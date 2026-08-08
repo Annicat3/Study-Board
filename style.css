@@ -51,9 +51,23 @@
 
 .app-window.fullscreen-window {
     width: 80vw;
-    top: 15% !important;
-    left: 15% !important;
-    bottom: 15% !important;
+    top: 10% !important;
+    left: 10% !important;
+    bottom: 10% !important;
+    right: 10% !important;
+}
+
+.background-container {
+    position: fixed;
+    top: 0;
+    left: 75px;
+    width: calc(100vw - 80px);
+    height: 100vh;
+    z-index: -1;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: background-image 0.3s ease;
 }
 
 .video-background {

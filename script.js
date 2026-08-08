@@ -25,6 +25,41 @@ function closeApp(appId) {
     }
 }
 
+function handleLocalImage(event) {
+    const file = event.target.files[0];
+    if (!file) return;
+    const reader = new FileReader();
+
+    reader.onload = function(e) {
+        const imageDataUrl = e.target.result;
+        setImageBackground(imageDataUrl);
+    };
+    reader.readAsDataURL(file);
+}
+
+function setImageBackground(url) {
+    const container = document.getElementById('bgContainer');
+    if (container) {
+        container.style.backgroundImage = `url('${url}')`;
+        localStorage.setItem('customBgImage', url);
+    }
+}
+
+function removeBg() {
+    const container = document.getElementById('bgContainer');
+    if (container) {
+        container.style.backgroundImage = 'none';
+        localStorage.removeItem('customBgImage');
+    }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    const savedBg = localStorage.getItem('customBgImage');
+    if (savedBg) {
+        setImageBackground(savedBg);
+    }
+});
+
 function applyYtBg() {
     const url = document.getElementById("ytInput").value.trim();
     const match = url.match(/^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/);

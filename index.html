@@ -11,6 +11,7 @@
     </head>
 
     <body>
+        <div class="background-container" id="bgContainer"></div>
 
         <div class="video-background">
             <iframe 
@@ -142,7 +143,14 @@
                         <input type="color" id="colorPicker" onchange="changeAccentColor(this.value)">
                     </div>
 
-                    <h3>Youtube Background</h3>
+                    <h3> <br> Background</h3>
+                    <h4>Background Image</h4>
+                    <div class="bg-settings">
+                        <input type="file" id="bgFileInput" accept="image/*" onchange="handleLocalImage(event)">
+                        <button onclick="removeBg()">Remove</button>
+                    </div>
+
+                    <h4>Youtube Background</h4>
                     <div class="yt-settings">
                         <input type="text" id="ytInput" placeholder="Insert YouTube link...">
                         <button onclick="applyYtBg()">Apply</button>
