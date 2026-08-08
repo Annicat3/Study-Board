@@ -6,6 +6,7 @@ function openApp(appId) {
     }
 }
 
+// AI-GENERATED >
 document.querySelectorAll('.app-window').forEach(win => {
     win.addEventListener('dragstart', (e) => {
         e.dataTransfer.setData('text/plain', null);
@@ -30,6 +31,7 @@ function makeDraggable(element) {
 document.querySelectorAll('.app-window').forEach(window => {
     makeDraggable(window);
 })
+// < AI-GENERATED
 
 function closeApp(appId) {
     const selectedApp = document.getElementById(appId);
@@ -73,6 +75,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
+// AI-GENERATED >
 function applyYtBg() {
     const url = document.getElementById("ytInput").value.trim();
     const match = url.match(/^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/);
@@ -82,6 +85,7 @@ function applyYtBg() {
         setVideoBackground(videoId);
     }
 }
+// < AI-GENERATED
 
 function removeYtBg() {
     const iframe= document.getElementById('bgVideo');
@@ -271,6 +275,7 @@ function changeAccentColor(newColor) {
     document.documentElement.style.setProperty("--accent-color", newColor);
     localStorage.setItem("customAccentColor", newColor);
 
+    // AI-GENERATED >
     const hex = newColor.replace('#', '');
     const r = parseInt(hex.substring(0, 2), 16);
     const g = parseInt(hex.substring(2, 4), 16);
@@ -279,6 +284,7 @@ function changeAccentColor(newColor) {
     const brightness = (r * 299 + g * 587 + b * 114) / 1000;
     const textColor = (brightness > 200) ? '#000000' : '#ffffff' ;
     document.documentElement.style.setProperty('--text-color', textColor);
+    // < AI-GENERATED
 }
 
 document.addEventListener('DOMContentLoaded', () => {
