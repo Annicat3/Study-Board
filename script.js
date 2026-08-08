@@ -228,6 +228,25 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
+async function loadNewCatAndQuote() {
+    const catImg = document.getElementById('catImg');
+    const quoteText = document.getElementById('quoteText');
+    const quoteAuthor = document.getElementById('quoteAuthor');
+
+    //quoteText.innerText = "Fetching new cat wisdom...";
+    //quoteAuthor.innerText = "";
+
+    try {
+        catImg.src = `https://cataas.com/cat?timestamp=${Date.now()}`
+        const response = await fetch('https://dummyjson.com/quotes/random');
+        const data = await response.json();
+        quoteText.innerText = `"${data.quote}"`;
+        quoteAuthor.innerText = `- ${data.author}`;
+    }   catch (error) {
+        quoteText.innerText = "Couldn't load new content.";
+        console.error("API Error:", error);
+    }
+}
 
 function changeAccentColor(newColor) {
     document.documentElement.style.setProperty("--accent-color", newColor);

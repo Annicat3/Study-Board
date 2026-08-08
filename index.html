@@ -33,7 +33,10 @@
                 <span class="material-icons" style="font-size:35px">notes</span>
             </button>
             <button onclick="openApp('ambient-sounds')">
-                <span class="material-icons" style="font-size:35px">headphones</span>
+                <span class="material-icons" style="font-size:35px;">headphones</span>
+            </button>
+            <button onclick="openApp('cat-app')">
+                <span class="material-icons" style="font-size: 35px;">pets</span>
             </button>
             <button onclick="openApp('settings')">
                 <span class="material-icons" style="font-size: 35px;">settings</span>
@@ -121,6 +124,21 @@
                         <input type="range" id="catpurrVolume" min="0" max="1" step="0.01" value="0" oninput="adjustVolume('catpurr', this.value)">
                     </div>
                     <audio id="catpurr" src="audio/cat-purr.mp3" loop></audio>
+                </div>
+            </div>
+
+            <div id="cat-app" class="app-window">
+                <div class="window-header">
+                    <span>Daily Cat & Motivation</span>
+                    <button class="close-btn" onclick="closeApp('cat-app')">x</button>
+                </div>
+                <div class="window-content">
+                    <div class="cat-image-wrapper">
+                        <img id="catImg" src="" alt="Loading cat..." />
+                    </div>
+                    <p id="quoteText" class="quote-text">"Click the button for Motivation!"</p>
+                    <p id="quoteAuthor" class="quoteAuthor">- Cat Whisperer</p>
+                    <button class="primary-btn" onclick="loadNewCatAndQuote()">New Cat & Quote 🐾</button>
                 </div>
             </div>
 
