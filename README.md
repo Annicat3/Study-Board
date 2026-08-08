@@ -36,6 +36,7 @@ A minimalist, customizable productivity dashboard featuring floating apps, ambie
 
 - **Audio:** [Pixabay](https://pixabay.com) for Ambient Sounds.
 - **Images:** [Unsplash](https://unsplash.com) for preset background wallpapers.
+- **UI Icons:** [Google Material Icons](https://fonts.google.com/icons) for toolbar icons.
 - **Cat Images API:** [CATAAS (Cats as a Service)](https://cataas.com)
 - **Quotes API:** [DummyJSON Quotes](https://dummyjson.com)
 - **Built for:** [Hack Club](https://hackclub.com) Macondo programm
