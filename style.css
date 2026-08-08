@@ -49,14 +49,6 @@
     display: block;
 }
 
-.app-window.fullscreen-window {
-    width: 80vw;
-    top: 10% !important;
-    left: 10% !important;
-    bottom: 10% !important;
-    right: 10% !important;
-}
-
 .background-container {
     position: fixed;
     top: 0;
@@ -254,6 +246,29 @@
     height: 25px;
     border: 2px solid white;
     border-radius: 50%;
+}
+
+.settings {
+    height: auto;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    z-index: 100;
+}
+
+.credits {
+    margin-top: 20px;
+    font-size: 0.75rem;
+    text-align: center;
+    opacity: 0.65;
+}
+
+.credits b {
+    font-weight: bold;
+    opacity: 0.9;
 }
 
 #datetime {

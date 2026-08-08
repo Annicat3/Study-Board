@@ -233,8 +233,6 @@ async function loadNewCatAndQuote() {
     const quoteText = document.getElementById('quoteText');
     const quoteAuthor = document.getElementById('quoteAuthor');
 
-    //quoteText.innerText = "Fetching new cat wisdom...";
-    //quoteAuthor.innerText = "";
 
     try {
         catImg.src = `https://cataas.com/cat?timestamp=${Date.now()}`
