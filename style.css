@@ -251,8 +251,9 @@
 }
 
 #settings {
+    display: fixed;
     height: auto;
-    max-height: 455px;
+    max-height: 475px;
     max-width: 600px;
     position: fixed;
     top: 0;
@@ -264,7 +265,7 @@
 }
 
 .credits {
-    margin-top: 20px;
+    margin: 20px 0;
     font-size: 0.75rem;
     text-align: center;
     opacity: 0.65;
