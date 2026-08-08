@@ -2,6 +2,8 @@
 
 A minimalist, customizable productivity dashboard featuring floating apps, ambient sounds, background presets, and focus tools—perfectly tailored for iPad & tablet study workflows.
 
+**Live Demo:** [Click here to open the Study Board](https://Annicat3.github.io/Study-Board/)
+
 
 ## Features
 - **To-Do List:** LocalStorage-powered task manager to track your daily goals.
@@ -43,7 +45,7 @@ A minimalist, customizable productivity dashboard featuring floating apps, ambie
 
 1. Clone this repository:
    ```bash
-   git clone [https://github.com/Annicat3/Study-Board.git]()
+   git clone [https://github.com/Annicat3/Study-Board.git](https://github.com/Annicat3/Study-Board.git)
 
 2. Open ⁠index.html⁠ in your browser.
 
