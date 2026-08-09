@@ -1,6 +1,6 @@
 # Study Board
 
-A minimalist, customizable productivity dashboard featuring floating apps, ambient sounds, background presets, and focus tools—perfectly tailored for iPad & tablet study workflows.
+A minimalist, customizable productivity dashboard featuring floating apps, ambient sounds, background presets, and focus tools — perfectly tailored for iPad & tablet study workflows.
 
 **Live Demo:** [Click here to open the Study Board](https://Annicat3.github.io/Study-Board/)
 
