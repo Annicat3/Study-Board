@@ -46,7 +46,7 @@ A minimalist, customizable productivity dashboard featuring floating apps, ambie
 
 1. Clone this repository:
    ```bash
-   git clone [https://github.com/Annicat3/Study-Board.git](https://github.com/Annicat3/Study-Board.git)
+   git clone https://github.com/Annicat3/Study-Board.git
 
 2. Open ⁠index.html⁠ in your browser.
 
